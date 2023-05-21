@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:encrypt/encrypt.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:todoapp/encrypt_key.dart';
+import 'package:todoapp/encryption_key.dart';
 import 'package:todoapp/models/todo.dart';
 
 class DataStorage {
@@ -19,7 +19,7 @@ class DataStorage {
 
   // Variables for encryption and decryption
   static final Key key = Key.fromBase64(
-    encryptKey,
+    encryptionKey,
   ); // This is your key, you can use whatever you want
   static final Encrypter encrypter = Encrypter(AES(key));
   static final IV iv = IV.fromLength(16);
